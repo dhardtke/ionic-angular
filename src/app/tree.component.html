@@ -1,0 +1,13 @@
+<ion-list class="level-{{ level }}">
+  <ion-item>
+    <ion-label>
+      {{ node?.name }}
+    </ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+
+  <cmp-tree *ngFor="let node of node?.children; trackBy:trackById"
+            [node]="node"
+            [level]="level + 1"></cmp-tree>
+
+</ion-list>

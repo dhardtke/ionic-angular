@@ -1,16 +1,26 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { ScrollingModule } from "@angular/cdk/scrolling";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { IonicModule } from "@ionic/angular";
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
+import { TreeComponent } from "./tree.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TreeComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ScrollingModule,
+    IonicModule.forRoot(),
+    //FakeIonicModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}
