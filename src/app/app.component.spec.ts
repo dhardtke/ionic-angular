@@ -34,18 +34,25 @@ describe("AppComponent", () => {
     expect(app.title).toEqual("ionic");
   });
 
+  async function wait(timeInMs: number): Promise<void> {
+    return new Promise<void>(resolve => {
+      setTimeout(resolve, timeInMs);
+    });
+  }
+
   it("should render title", async () => {
     const fixture = TestBed.createComponent(AppComponent);
-    /*const initializers = TestBed.inject(APP_INITIALIZER);
-    await initializers[0]();*/
     fixture.detectChanges();
     await fixture.whenStable();
+
     const compiled = fixture.nativeElement as HTMLElement;
     const toggle = fixture.debugElement.query(e => e.name === "ion-toggle");
+
     toggle.nativeElement.click();
     fixture.detectChanges();
-    toggle.nativeElement.click();
-    fixture.detectChanges();
+
+    await wait(300);
+
     console.log(compiled.innerHTML);
   });
 });
