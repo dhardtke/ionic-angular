@@ -1,10 +1,14 @@
-import { Component, Input, ViewEncapsulation } from "@angular/core";
-import { Tree } from "./app.component";
+import { Component, Input } from "@angular/core";
+
+export interface Tree {
+  name: string;
+  children: Tree[];
+  id: string;
+}
 
 @Component({
   selector: "cmp-tree",
   templateUrl: "./tree.component.html",
-  //encapsulation: ViewEncapsulation.ShadowDom,
   styles: [
     `
       .level-1 {

@@ -1,0 +1,11 @@
+<p>{{ checked }}</p>
+
+<ion-item>
+  <ion-label>Click me</ion-label>
+  <ion-toggle [(ngModel)]="checked"></ion-toggle>
+</ion-item>
+
+<div *ngIf="checked">
+  <p>I am only rendered if the toggle has been checked.</p>
+  <ion-checkbox></ion-checkbox>
+</div>
